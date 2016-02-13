@@ -15,4 +15,7 @@
 
 class Customer < ActiveRecord::Base
   has_many :rental_orders
+  has_many :cars, through: :rental_orders
+
+  validates :name, :surname, :address, :city, :zip_code, presence: true
 end

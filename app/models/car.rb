@@ -12,4 +12,10 @@
 #
 
 class Car < ActiveRecord::Base
+  has_many :rental_orders
+  has_many :customers, through: :rental_orders
+
+  validates :make, :model, :comfort_class, presence: true
+  validates :comfort_class, inclusion: {in: %w(A B C),
+    message: "%{value} is not a valid car comfort class" }
 end

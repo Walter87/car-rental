@@ -13,7 +13,10 @@
 #
 
 class RentalOrder < ActiveRecord::Base
-  belongs_to :customer_id
-  belongs_to :user_id
-  belongs_to :car_id
+  belongs_to :customer
+  belongs_to :user
+  belongs_to :car
+
+  validates :customer_id, :user_id, :car_id, :start_date, :end_date, presence: true
+
 end
