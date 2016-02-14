@@ -1,0 +1,13 @@
+= simple_form_for rental_order, :html => { :class => 'form-horizontal' } do |f|
+  = f.input :customer_id
+  = f.error_span :customer_id
+  = f.input :user_id
+  = f.error_span :user_id
+  = f.input :car_id
+  = f.error_span :car_id
+  = f.input :start_date
+  = f.error_span :start_date
+  = f.input :end_date
+  = f.error_span :end_date
+  = f.button :submit, :class => 'btn-primary'
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), rental_orders_path, :class => 'btn btn-default'
