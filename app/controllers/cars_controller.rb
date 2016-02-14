@@ -16,24 +16,30 @@ class CarsController < ApplicationController
   expose(:car)
 
   def create
+    self.car = Car.new(car_params)
     if car.save
-      redirect_to(car)
+      redirect_to root_url
     else
       render :new
     end
   end
 
   def update
-    if car.save
-      redirect_to(car)
+    if self.car.update(car_params)
+      redirect_to root_url
     else
       render :edit
     end
   end
 
+  def destroy
+    car.destroy
+    redirect_to root_url, notice: 'Product was successfully destroyed.'
+  end
+
   private
 
-  def person_params # example of strong parameters
+  def car_params
     params.require(:car).permit(:make, :model, :description, :comfort_class)
   end
 end

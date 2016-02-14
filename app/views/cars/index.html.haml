@@ -1,6 +1,27 @@
--cars.each do |car|
-  %li=car.make
-  %li=car.model
-  %li=car.description
-  %li=car.comfort_class
-  %hr
+- model_class = Car
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+%table.table.table-striped
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:make)
+      %th= model_class.human_attribute_name(:model)
+      %th= model_class.human_attribute_name(:description)
+      %th= model_class.human_attribute_name(:comfort_class)
+      %th= model_class.human_attribute_name(:created_at)
+      %th=t '.actions', :default => t("helpers.actions")
+  %tbody
+    - cars.each do |car|
+      %tr
+        %td= link_to car.id, car_path(car)
+        %td= car.make
+        %td= car.model
+        %td= car.description
+        %td= car.comfort_class
+        %td=l car.created_at
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_car_path(car), :class => 'btn btn-default btn-xs'
+
+
+= link_to t('.new', :default => t("helpers.links.new")), new_car_path, :class => 'btn btn-primary'

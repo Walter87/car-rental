@@ -1,6 +1,11 @@
-= simple_form_for car do |f|
+= simple_form_for car, :html => { :class => 'form-horizontal' } do |f|
   = f.input :make
+  = f.error_span :make
   = f.input :model
+  = f.error_span :model
   = f.input :description
+  = f.error_span :description
   = f.input :comfort_class
-  = f.button :submit
+  = f.error_span :comfort_class
+  = f.button :submit, :class => 'btn-primary'
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), cars_path, :class => 'btn btn-default'
