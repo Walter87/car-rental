@@ -19,7 +19,7 @@
         %td= car.model
         %td= car.description
         %td= car.comfort_class
-        %td=l car.created_at
+        %td= car.created_at.strftime('%c')
         %td
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_car_path(car), :class => 'btn btn-default btn-xs'
 

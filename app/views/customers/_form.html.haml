@@ -1,0 +1,15 @@
+= simple_form_for customer, :html => { :class => 'form-horizontal' } do |f|
+  = f.input :name
+  = f.error_span :name
+  = f.input :surname
+  = f.error_span :surname
+  = f.input :address
+  = f.error_span :address
+  = f.input :city
+  = f.error_span :city
+  = f.input :zip_code
+  = f.error_span :zip_code
+  = f.input :notes
+  = f.error_span :notes
+  = f.button :submit, :class => 'btn-primary'
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), customers_path, :class => 'btn btn-default'

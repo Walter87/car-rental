@@ -28,10 +28,8 @@
         %a.navbar-brand(href="#") CarRental
         .navbar-collapse.collapse.navbar-responsive-collapse
           %ul.nav.navbar-nav
-            %li= link_to "Link 1", "/path1"
-            %li= link_to "Link 2", "/path2"
-            %li= link_to "Link 3", "/path3"
-            %li= link_to "Link 3", "/path3"
+            %li= link_to "Cars", cars_path
+            %li= link_to "Customers", customers_path
 
     .container
       .row
@@ -40,11 +38,12 @@
           = yield
         .col-lg-3
           .well.sidebar-nav
-            %h3 Sidebar
+            %h3 Our cars
             %ul.nav.nav-list
-              %li.nav-header Sidebar
-              %li= link_to "Link 1", "/path1"
-              %li= link_to "Link 2", "/path2"
-              %li= link_to "Link 3", "/path3"
+              %li.nav-header Choose one from our awesome cars
+              - cars.each do |car|
+                %li= link_to "#{car.make} #{car.model}", car_path(car)
+                / %li= link_to "Link 2", "/path2"
+                / %li= link_to "Link 3", "/path3"
       %footer
         %p &copy; Company 2016

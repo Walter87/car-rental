@@ -12,8 +12,6 @@
 #
 
 class CarsController < ApplicationController
-  expose(:cars)
-  expose(:car)
 
   def create
     self.car = Car.new(car_params)
@@ -34,7 +32,7 @@ class CarsController < ApplicationController
 
   def destroy
     car.destroy
-    redirect_to root_url, notice: 'Product was successfully destroyed.'
+    redirect_to root_url, notice: 'Car was successfully destroyed.'
   end
 
   private
