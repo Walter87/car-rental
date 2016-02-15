@@ -5,7 +5,7 @@
 %p
   %strong= model_class.human_attribute_name(:customer_id) + ':'
   %br
-  = rental_order.customer_id
+  = rental_order.customer
 %p
   %strong= model_class.human_attribute_name(:user_id) + ':'
   %br
@@ -22,6 +22,10 @@
   %strong= model_class.human_attribute_name(:end_date) + ':'
   %br
   = rental_order.end_date
+%p
+  %strong= model_class.human_attribute_name(:rental_cost) + ':'
+  %br
+  = rental_order.rental_cost
 
 
 = link_to t('.back', :default => t("helpers.links.back")), rental_orders_path, :class => 'btn btn-default'
