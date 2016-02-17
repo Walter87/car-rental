@@ -97,62 +97,58 @@ RSpec.describe RentalOrdersController, type: :controller do
 
           end
 
-          context "with invalid attributes" do
-            it "does not save the new rental_order in the database" do
+        context "with invalid attributes" do
+          it "does not save the new rental_order in the database" do
+            expect {
+              post :create, rental_order: attributes_with_foreign_keys(:invalid_rental_order)
+              }.to_not change(RentalOrder,:count)
+            end
+            it "won't create new rental order with already booked date for the same car" do
+              car = create(:car)
+              create(:rental_order, user: @user, car: car)
               expect {
-                post :create, rental_order: attributes_with_foreign_keys(:invalid_rental_order)
-                }.to_not change(RentalOrder,:count)
-              end
-
-              it "won't create new rental order with already booked date for the same car" do
-                car = create(:car)
-                create(:rental_order, user: @user, car: car)
-                expect {
-                  post :create, rental_order: attributes_with_foreign_keys(:rental_order, car: car)
-                }.to_not change(RentalOrder,:count)
-              end
-
-              it "re-renders the :new template" do
-                post :create, rental_order: attributes_with_foreign_keys(:invalid_rental_order)
-                response.should render_template :new
-              end
+                post :create, rental_order: attributes_with_foreign_keys(:rental_order, car: car)
+              }.to_not change(RentalOrder,:count)
             end
-          end
-          describe "GET #edit" do
-            it "renders the :edit template" do
-              rental_order = create(:rental_order, user:@user)
-              get :edit, id: rental_order
-              response.should render_template :edit
-            end
-          end
-          describe 'PUT update' do
-            before :each do
-              @rental_order1 = create(:rental_order, start_date: "2016-03-24 07:34:08", end_date: "2016-03-27 07:34:08", user: @user)
-            end
-            context "with valid attributes" do
-              it "update rental_order in the database" do
-                put :update, id: @rental_order1, rental_order: attributes_with_foreign_keys(:rental_order)
-                controller.rental_order.start_date.should eq("2016-05-24 07:34:08")
-                controller.rental_order.end_date.should eq("2016-05-28 07:34:08")
-
-              end
-              it "redirects to the home page" do
-                put :update, id: @rental_order1, rental_order: attributes_with_foreign_keys(:rental_order)
-                expect(response).to redirect_to root_url
-              end
-            end
-            context "with invalid attributes" do
-              it "does not update the rental_order in the database" do
-                put :update, id: @rental_order1, rental_order: attributes_with_foreign_keys(:rental_order, start_date: nil)
-                controller.rental_order.reload
-                expect(controller.rental_order.start_date).to eq("2016-03-24 07:34:08")
-              end
-              it "re-renders the :edit template" do
-                put :update, id: @rental_order1, rental_order: attributes_with_foreign_keys(:rental_order, start_date: nil)
-                expect(response).to render_template :edit
-              end
+            it "re-renders the :new template" do
+              post :create, rental_order: attributes_with_foreign_keys(:invalid_rental_order)
+              response.should render_template :new
             end
           end
         end
-
+    describe "GET #edit" do
+      it "renders the :edit template" do
+        rental_order = create(:rental_order, user:@user)
+        get :edit, id: rental_order
+        response.should render_template :edit
       end
+    end
+    describe 'PUT update' do
+      before :each do
+        @rental_order1 = create(:rental_order, start_date: "2016-03-24 07:34:08", end_date: "2016-03-27 07:34:08", user: @user)
+      end
+      context "with valid attributes" do
+        it "update rental_order in the database" do
+          put :update, id: @rental_order1, rental_order: attributes_with_foreign_keys(:rental_order)
+          controller.rental_order.start_date.should eq("2016-05-24 07:34:08")
+          controller.rental_order.end_date.should eq("2016-05-28 07:34:08")
+        end
+        it "redirects to the home page" do
+          put :update, id: @rental_order1, rental_order: attributes_with_foreign_keys(:rental_order)
+          expect(response).to redirect_to root_url
+        end
+      end
+      context "with invalid attributes" do
+        it "does not update the rental_order in the database" do
+          put :update, id: @rental_order1, rental_order: attributes_with_foreign_keys(:rental_order, start_date: nil)
+          controller.rental_order.reload
+          expect(controller.rental_order.start_date).to eq("2016-03-24 07:34:08")
+        end
+        it "re-renders the :edit template" do
+          put :update, id: @rental_order1, rental_order: attributes_with_foreign_keys(:rental_order, start_date: nil)
+          expect(response).to render_template :edit
+        end
+      end
+    end
+  end
+end
