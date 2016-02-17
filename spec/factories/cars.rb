@@ -31,6 +31,9 @@ FactoryGirl.define do
       description 'Compact car for everyone'
       comfort_class 'B'
     end
-  end
 
+  end
+  factory :invalid_car, parent: :car do |f|
+    f.make nil
+  end
 end

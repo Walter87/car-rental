@@ -24,11 +24,12 @@
 
 // });
 $(document).ready(function() {
-  var arr = gon.dates;
+
+  $(function () {
+    var arr = gon.dates;
   arr = jQuery.map(arr, function(date) {
     return new Date(date*1000);
   });
-  $(function () {
         $('#datetimepicker12').datetimepicker({
 
             format: "dd MM yyyy",
