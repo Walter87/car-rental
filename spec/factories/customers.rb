@@ -22,4 +22,8 @@ FactoryGirl.define do
     zip_code 'OX42NH'
   end
 
+  factory :invalid_customer, parent: :customer do |f|
+    f.name nil
+  end
+
 end
