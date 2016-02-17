@@ -14,7 +14,14 @@
 
 FactoryGirl.define do
   factory :rental_order do
-    
+    customer
+    car
+    start_date "2016-05-24 07:34:08"
+    end_date "2016-05-28 07:34:08"
+  end
+
+  factory :invalid_rental_order, parent: :rental_order do |f|
+    f.start_date nil
   end
 
 end

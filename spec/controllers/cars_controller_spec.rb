@@ -1,6 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe CarsController, type: :controller do
+  context 'when user is not logged in' do
+    before do
+        get :index
+      end
+      it { is_expected.to redirect_to user_session_path }
+    end
+  context 'when user is logged in' do
   login_user
 
   describe "GET #index" do
@@ -116,3 +123,4 @@ RSpec.describe CarsController, type: :controller do
           end
         end
       end
+    end

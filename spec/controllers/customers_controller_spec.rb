@@ -20,10 +20,8 @@ RSpec.describe CustomersController, type: :controller do
     before do
         get :index
       end
-      it { is_expected.to redirect_to new_session_path }
-      it { is_expected.to set_the_flash(:warning).to('Please log in.') }
-      it { is_expected.to set_session(:return_to).to(contacts_path) }
-  end
+      it { is_expected.to redirect_to user_session_path }
+    end
   context 'when user is logged in' do
     login_user
 

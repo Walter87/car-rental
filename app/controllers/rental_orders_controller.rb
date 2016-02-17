@@ -16,11 +16,12 @@ class RentalOrdersController < ApplicationController
   expose(:rental_order)
   expose(:rental_orders)
   def create
-    self.rental_order.user_id = current_user.id
     self.rental_order = RentalOrder.new(rental_order_params)
+    self.rental_order.user = current_user
     if rental_order.save
       redirect_to root_url
     else
+      flash[:notice]=(rental_order.errors.full_messages)
       render :new
     end
   end
