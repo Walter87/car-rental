@@ -33,10 +33,6 @@ class CustomersController < ApplicationController
     end
   end
 
-  def destroy
-    customer.destroy
-    redirect_to customers_url, notice: 'Customer was successfully destroyed.'
-  end
 
   private
 

@@ -33,11 +33,6 @@ class RentalOrdersController < ApplicationController
     end
   end
 
-  def destroy
-    rental_order.destroy
-    redirect_to root_url, notice: 'rental_order was successfully destroyed.'
-  end
-
   private
 
   def rental_order_params

@@ -13,6 +13,10 @@
 
 class CarsController < ApplicationController
 
+  def show
+    gon.dates = car.booked_dates
+  end
+
   def create
     self.car = Car.new(car_params)
     if car.save
@@ -28,11 +32,6 @@ class CarsController < ApplicationController
     else
       render :edit
     end
-  end
-
-  def destroy
-    car.destroy
-    redirect_to root_url, notice: 'Car was successfully destroyed.'
   end
 
   private

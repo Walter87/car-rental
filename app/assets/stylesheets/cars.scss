@@ -1,3 +1,15 @@
 // Place all the styles related to the cars controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.bootstrap-datetimepicker-widget table td.disabled, .bootstrap-datetimepicker-widget table td.disabled:hover {
+    background: antiquewhite;
+    color: #777777;
+    cursor: not-allowed;
+}
+
+#my_own_legend {
+  background: antiquewhite;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  }

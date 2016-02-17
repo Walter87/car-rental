@@ -11,8 +11,31 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
+//= require bootstrap/dist/js/bootstrap
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
+//= require moment
+//= require bootstrap-datetimepicker
+// $(document).ready(function() {
+//   alert $('#products').data('products')
 
+// });
+$(document).ready(function() {
+  var arr = gon.dates;
+  arr = jQuery.map(arr, function(date) {
+    return new Date(date*1000);
+  });
+  $(function () {
+        $('#datetimepicker12').datetimepicker({
+
+            format: "dd MM yyyy",
+            inline: true,
+            disabledDates: arr,
+            showTodayButton: true,
+        });
+
+    });
+});
