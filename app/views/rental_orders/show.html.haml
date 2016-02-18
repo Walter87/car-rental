@@ -5,15 +5,15 @@
 %p
   %strong= model_class.human_attribute_name(:customer_id) + ':'
   %br
-  = rental_order.customer
+  = rental_order.customer.decorate.full_name
 %p
   %strong= model_class.human_attribute_name(:user_id) + ':'
   %br
-  = rental_order.user_id
+  = rental_order.user.email
 %p
   %strong= model_class.human_attribute_name(:car_id) + ':'
   %br
-  = rental_order.car_id
+  = rental_order.car.decorate.full_name
 %p
   %strong= model_class.human_attribute_name(:start_date) + ':'
   %br
@@ -25,7 +25,7 @@
 %p
   %strong= model_class.human_attribute_name(:rental_cost) + ':'
   %br
-  = rental_order.rental_cost
+  = rental_order.decorate.rental_cost
 
 
 = link_to t('.back', :default => t("helpers.links.back")), rental_orders_path, :class => 'btn btn-default'

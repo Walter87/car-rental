@@ -84,6 +84,12 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
+    docile (1.1.5)
+    draper (1.4.0)
+      actionpack (>= 3.0)
+      activemodel (>= 3.0)
+      activesupport (>= 3.0)
+      request_store (~> 1.0)
     erubis (2.7.0)
     execjs (2.6.0)
     factory_girl (4.5.0)
@@ -219,6 +225,11 @@ GEM
     simple_form (3.2.1)
       actionpack (> 4, < 5.1)
       activemodel (> 4, < 5.1)
+    simplecov (0.11.2)
+      docile (~> 1.1.0)
+      json (~> 1.8)
+      simplecov-html (~> 0.10.0)
+    simplecov-html (0.10.0)
     spring (1.6.3)
     sprockets (3.5.2)
       concurrent-ruby (~> 1.0)
@@ -261,6 +272,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   decent_exposure
   devise
+  draper
   factory_girl_rails
   faker
   gon
@@ -278,6 +290,7 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   shoulda-matchers (~> 3.1)
   simple_form
+  simplecov
   spring
   therubyracer
   turbolinks

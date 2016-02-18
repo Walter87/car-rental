@@ -5,6 +5,10 @@ RSpec.feature "VisitorSignsUps", type: :feature do
     before :each do
       create(:user)
     end
+    it "signs me up with email and password" do
+      sign_up_with("mail3@example.com","pass1234")
+      expect(page).to have_content 'Welcome! You have signed up successfully.'
+    end
 
     it "signs me in with valid email and password" do
       visit '/users/sign_in'

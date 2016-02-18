@@ -18,14 +18,11 @@ class RentalOrder < ActiveRecord::Base
   belongs_to :car
 
   validates :customer_id, :user_id, :car_id, :start_date, :end_date, presence: true
-  validate :start_date_cannot_be_in_the_past
+  validate :start_date_cannot_be_in_the_past, on: :create
   validate :end_date_cannot_be_in_the_past
   validate :date_cannot_be_already_booked
 
-  def rental_cost
-    comfort_class_cost = {'A'=> 100, 'B'=> 75, 'C'=>50}
-    comfort_class_cost[self.car.comfort_class] * (((self.end_date - self.start_date)/86400).to_i + 1)
-  end
+
 
   def start_date_cannot_be_in_the_past
     if start_date.present? && start_date < Date.today

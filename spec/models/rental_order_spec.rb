@@ -24,5 +24,7 @@ RSpec.describe RentalOrder, :type => :model do
     it { should validate_presence_of(:user_id) }
     it { should validate_presence_of(:customer_id) }
     it { should validate_presence_of(:car_id) }
+    it { should_not allow_value(10.days.ago).for(:start_date) }
+    it { should_not allow_value(8.days.ago).for(:end_date) }
   end
 end

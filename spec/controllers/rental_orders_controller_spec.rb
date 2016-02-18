@@ -83,7 +83,7 @@ RSpec.describe RentalOrdersController, type: :controller do
 
             it "redirects to index page" do
               post :create, rental_order: attributes_with_foreign_keys(:rental_order)
-              response.should redirect_to root_url
+              response.should redirect_to rental_orders_url
             end
 
             it "will create new rental order with non booked date for the same car" do
@@ -135,7 +135,7 @@ RSpec.describe RentalOrdersController, type: :controller do
         end
         it "redirects to the home page" do
           put :update, id: @rental_order1, rental_order: attributes_with_foreign_keys(:rental_order)
-          expect(response).to redirect_to root_url
+          expect(response).to redirect_to rental_orders_url
         end
       end
       context "with invalid attributes" do
@@ -150,5 +150,23 @@ RSpec.describe RentalOrdersController, type: :controller do
         end
       end
     end
+
+    describe 'DELETE destroy' do
+      before :each do
+        @rental_order = create(:rental_order, user: @user)
+      end
+
+      it "deletes the rental_order" do
+        expect{
+          delete :destroy, id: @rental_order
+        }.to change(RentalOrder,:count).by(-1)
+      end
+
+      it "redirects to rental_orders#index" do
+        delete :destroy, id: @rental_order
+        response.should redirect_to rental_orders_url
+      end
+    end
+
   end
 end

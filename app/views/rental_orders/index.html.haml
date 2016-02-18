@@ -10,16 +10,18 @@
       %th= model_class.human_attribute_name(:start_date)
       %th= model_class.human_attribute_name(:end_date)
       %th= model_class.human_attribute_name(:created_at)
+      %th= model_class.human_attribute_name(:cost)
       %th=t '.actions', :default => t("helpers.actions")
   %tbody
     - rental_orders.each do |rental_order|
       %tr
         %td= link_to rental_order.id, rental_order_path(rental_order)
-        %td= rental_order.customer.name
-        %td= rental_order.car.make
+        %td= rental_order.customer.decorate.full_name
+        %td= rental_order.car.decorate.full_name
         %td= rental_order.start_date.strftime('%D')
         %td= rental_order.end_date.strftime('%D')
         %td= rental_order.created_at.strftime('%c')
+        %td= "#{rental_order.decorate.rental_cost} zl"
         %td
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_rental_order_path(rental_order), :class => 'btn btn-default btn-xs'
           = link_to t('.destroy', :default => t("helpers.links.destroy")), rental_order_path(rental_order), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger'

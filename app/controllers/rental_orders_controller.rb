@@ -19,7 +19,7 @@ class RentalOrdersController < ApplicationController
     self.rental_order = RentalOrder.new(rental_order_params)
     self.rental_order.user = current_user
     if rental_order.save
-      redirect_to root_url
+      redirect_to rental_orders_url
     else
       flash[:notice]=(rental_order.errors.full_messages)
       render :new
@@ -28,9 +28,15 @@ class RentalOrdersController < ApplicationController
 
   def update
     if self.rental_order.update(rental_order_params)
-      redirect_to root_url
+      redirect_to rental_orders_url
     else
       render :edit
+    end
+  end
+
+  def destroy
+    if rental_order.destroy
+      redirect_to rental_orders_url
     end
   end
 
