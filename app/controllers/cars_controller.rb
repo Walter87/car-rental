@@ -12,9 +12,9 @@
 #
 
 class CarsController < ApplicationController
-
+  before_action :pass_disabled_dates, only: :show
   def show
-    gon.dates = car.booked_dates
+
   end
 
   def create
@@ -38,5 +38,8 @@ class CarsController < ApplicationController
 
   def car_params
     params.require(:car).permit(:make, :model, :description, :comfort_class)
+  end
+  def pass_disabled_dates
+    gon.dates = car.booked_dates
   end
 end

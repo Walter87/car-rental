@@ -21,7 +21,7 @@ class RentalOrder < ActiveRecord::Base
   validate :start_date_cannot_be_in_the_past, on: :create
   validate :end_date_cannot_be_in_the_past
   validate :date_cannot_be_already_booked
-
+  validate :end_date_must_be_after_start_date
 
 
   def start_date_cannot_be_in_the_past
@@ -33,6 +33,12 @@ class RentalOrder < ActiveRecord::Base
   def end_date_cannot_be_in_the_past
     if end_date.present? && end_date < Date.today
       errors.add(:end_date, "can't be in the past")
+    end
+  end
+
+  def end_date_must_be_after_start_date
+    if end_date.present? && start_date.present? && end_date < start_date
+      errors.add(:end_date, "can't be before start date")
     end
   end
 
