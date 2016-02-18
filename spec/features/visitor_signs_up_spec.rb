@@ -14,7 +14,7 @@ RSpec.feature "VisitorSignsUps", type: :feature do
       expect(page).to have_content 'Signed in successfully.'
     end
 
-    it "won't signs me in with invalid email and password" do
+    it "won't sign me in with invalid email and password" do
       visit '/users/sign_in'
       fill_in 'Email', :with => 'bad@example.com'
       fill_in 'Password', :with => 'pass1234'

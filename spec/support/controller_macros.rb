@@ -14,7 +14,7 @@ module ControllerMacros
   end
 
   RSpec.configure do |config|
-  config.include ControllerMacros, :type => :controller
-end
+    config.include ControllerMacros, :type => :controller
+  end
 
 end
