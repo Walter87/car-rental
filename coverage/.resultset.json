@@ -1905,40 +1905,6 @@
         null,
         null
       ],
-      "/home/grzegorz/car-rental/spec/helpers/customers_helper_spec.rb": [
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/home/grzegorz/car-rental/spec/helpers/rental_orders_helper_spec.rb": [
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        null
-      ],
       "/home/grzegorz/car-rental/spec/models/car_spec.rb": [
         null,
         null,
@@ -2091,6 +2057,6 @@
         null
       ]
     },
-    "timestamp": 1455900253
+    "timestamp": 1455900591
   }
 }

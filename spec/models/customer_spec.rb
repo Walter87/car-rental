@@ -34,5 +34,5 @@ RSpec.describe Customer, :type => :model do
    it 'has an invalid factory without zip_code' do
     expect(build(:customer, zip_code: '')).to_not be_valid
   end
-  it { should have_many(:cars).through(:rental_orders) }
+  it { is_expected.to have_many(:cars).through(:rental_orders) }
 end

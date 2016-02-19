@@ -26,6 +26,6 @@ RSpec.describe Car, :type => :model do
   it 'has an invalid factory with comfort_class different then inclusion assumes' do
     expect(build(:car, comfort_class: 'D')).to_not be_valid
   end
-  it { should have_many(:customers).through(:rental_orders) }
+  it { is_expected.to have_many(:customers).through(:rental_orders) }
 
 end

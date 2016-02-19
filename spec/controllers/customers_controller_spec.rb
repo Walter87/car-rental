@@ -29,11 +29,11 @@ RSpec.describe CustomersController, type: :controller do
       it "populates an array of customers" do
         customer = create(:customer)
         get :index
-        controller.customers.should eq([customer])
+        expect(controller.customers).to eq([customer])
       end
       it "renders the :index view" do
         get :index
-        response.should render_template :index
+        expect(response).to render_template :index
       end
     end
 
@@ -41,12 +41,12 @@ RSpec.describe CustomersController, type: :controller do
       it "assigns the requested customer to customer" do
         customer = create(:customer)
         get :show, id: customer
-        controller.customer.should eq(customer)
+        expect(controller.customer).to eq(customer)
       end
 
       it "renders the :show template" do
         get :show, id: create(:customer)
-        response.should render_template :show
+        expect(response).to render_template :show
       end
 
     end
@@ -54,7 +54,7 @@ RSpec.describe CustomersController, type: :controller do
     describe "GET #new" do
       it "renders the :new template" do
         get :new
-        response.should render_template :new
+        expect(response).to render_template :new
       end
 
     end
@@ -77,14 +77,14 @@ RSpec.describe CustomersController, type: :controller do
               zip_code: "30-003",
             }
           }
-          should permit(:name, :surname,:address,:city,:zip_code).
+          is_expected.to permit(:name, :surname,:address,:city,:zip_code).
             for(:create, params: params).
               on(:customer)
           end
 
         it "redirects to customer index page" do
           post :create, customer: attributes_for(:customer)
-          response.should redirect_to customers_url
+          expect(response).to redirect_to customers_url
         end
       end
 
@@ -97,7 +97,7 @@ RSpec.describe CustomersController, type: :controller do
 
         it "re-renders the :new template" do
           post :create, customer: attributes_for(:invalid_customer)
-          response.should render_template :new
+          expect(response).to render_template :new
         end
       end
     end
@@ -107,7 +107,7 @@ RSpec.describe CustomersController, type: :controller do
       it "renders the :edit template" do
         customer = create(:customer)
         get :edit, id: customer
-        response.should render_template :edit
+        expect(response).to render_template :edit
       end
     end
 
@@ -119,8 +119,8 @@ RSpec.describe CustomersController, type: :controller do
       context "with valid attributes" do
         it "update customer in the database" do
           put :update, id: @customer1, customer: attributes_for(:customer)
-          controller.customer.name.should eq("John")
-          controller.customer.surname.should eq("Due")
+          expect(controller.customer.name).to eq("John")
+          expect(controller.customer.surname).to eq("Due")
         end
         it "redirects to the home page" do
           put :update, id: @customer1, customer: attributes_for(:customer)

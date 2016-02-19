@@ -16,15 +16,15 @@ require 'rails_helper'
 
 RSpec.describe RentalOrder, :type => :model do
   context "associations" do
-    it { should belong_to(:user) }
-    it { should belong_to(:customer) }
-    it { should belong_to(:car) }
+    it { is_expected.to belong_to(:user) }
+    it { is_expected.to belong_to(:customer) }
+    it { is_expected.to belong_to(:car) }
   end
   context "validations" do
-    it { should validate_presence_of(:user_id) }
-    it { should validate_presence_of(:customer_id) }
-    it { should validate_presence_of(:car_id) }
-    it { should_not allow_value(10.days.ago).for(:start_date) }
-    it { should_not allow_value(8.days.ago).for(:end_date) }
+    it { is_expected.to validate_presence_of(:user_id) }
+    it { is_expected.to validate_presence_of(:customer_id) }
+    it { is_expected.to validate_presence_of(:car_id) }
+    it { is_expected.not_to allow_value(10.days.ago).for(:start_date) }
+    it { is_expected.not_to allow_value(8.days.ago).for(:end_date) }
   end
 end

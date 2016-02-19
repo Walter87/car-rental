@@ -14,26 +14,26 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-02-19T17:44:14+01:00">2016-02-19T17:44:14+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-02-19T17:49:51+01:00">2016-02-19T17:49:51+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">99.09%</span></span>
+    (<span class="covered_percent"><span class="green">99.08%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.28
+         2.29
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>51</b> files in total.
-    <b>656</b> relevant lines. 
-    <span class="green"><b>650</b> lines covered</span> and
+    <b>49</b> files in total.
+    <b>650</b> relevant lines. 
+    <span class="green"><b>644</b> lines covered</span> and
     <span class="red"><b>6</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -468,26 +468,6 @@
         <td>20</td>
         <td>0</td>
         <td>1.1</td>
-      </tr>
-      
-      <tr>
-        <td class="strong"><a href="#c7eb408337c4755ea5f6b3d53e452964081cd93c" class="src_link" title="spec/helpers/customers_helper_spec.rb">spec/helpers/customers_helper_spec.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>15</td>
-        <td>3</td>
-        <td>3</td>
-        <td>0</td>
-        <td>1.0</td>
-      </tr>
-      
-      <tr>
-        <td class="strong"><a href="#272528e77f1ebba828d440b7a2dd8fbdf9e6a645" class="src_link" title="spec/helpers/rental_orders_helper_spec.rb">spec/helpers/rental_orders_helper_spec.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>15</td>
-        <td>3</td>
-        <td>3</td>
-        <td>0</td>
-        <td>1.0</td>
       </tr>
       
       <tr>
@@ -7307,7 +7287,7 @@
         <li class="covered" data-hits="1" data-linenumber="18">
           <span class="hits">1</span>
           
-          <code class="ruby">        controller.cars.should eq([car])</code>
+          <code class="ruby">        expect(controller.cars).to eq([car])</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="19">
@@ -7337,7 +7317,7 @@
         <li class="covered" data-hits="1" data-linenumber="23">
           <span class="hits">1</span>
           
-          <code class="ruby">        response.should render_template :index</code>
+          <code class="ruby">        expect(response).to render_template :index</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="24">
@@ -7391,7 +7371,7 @@
         <li class="covered" data-hits="1" data-linenumber="32">
           <span class="hits">1</span>
           
-          <code class="ruby">        controller.car.should eq(car)</code>
+          <code class="ruby">        expect(controller.car).to eq(car)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="33">
@@ -7421,7 +7401,7 @@
         <li class="covered" data-hits="1" data-linenumber="37">
           <span class="hits">1</span>
           
-          <code class="ruby">        response.should render_template :show</code>
+          <code class="ruby">        expect(response).to render_template :show</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="38">
@@ -7469,7 +7449,7 @@
         <li class="covered" data-hits="1" data-linenumber="45">
           <span class="hits">1</span>
           
-          <code class="ruby">        response.should render_template :new</code>
+          <code class="ruby">        expect(response).to render_template :new</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="46">
@@ -7601,7 +7581,7 @@
         <li class="covered" data-hits="1" data-linenumber="67">
           <span class="hits">1</span>
           
-          <code class="ruby">          should permit(:make, :model, :description, :comfort_class).</code>
+          <code class="ruby">          is_expected.to permit(:make, :model, :description, :comfort_class).</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="68">
@@ -7643,7 +7623,7 @@
         <li class="covered" data-hits="1" data-linenumber="74">
           <span class="hits">1</span>
           
-          <code class="ruby">          response.should redirect_to root_url</code>
+          <code class="ruby">          expect(response).to redirect_to root_url</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="75">
@@ -7721,7 +7701,7 @@
         <li class="covered" data-hits="1" data-linenumber="87">
           <span class="hits">1</span>
           
-          <code class="ruby">          response.should render_template :new</code>
+          <code class="ruby">          expect(response).to render_template :new</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="88">
@@ -7775,7 +7755,7 @@
         <li class="covered" data-hits="1" data-linenumber="96">
           <span class="hits">1</span>
           
-          <code class="ruby">        response.should render_template :edit</code>
+          <code class="ruby">        expect(response).to render_template :edit</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="97">
@@ -7853,13 +7833,13 @@
         <li class="covered" data-hits="1" data-linenumber="109">
           <span class="hits">1</span>
           
-          <code class="ruby">          controller.car.make.should eq(&quot;Suzuki&quot;)</code>
+          <code class="ruby">          expect(controller.car.make).to eq(&quot;Suzuki&quot;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="110">
           <span class="hits">1</span>
           
-          <code class="ruby">          controller.car.model.should eq(&quot;Ignis&quot;)</code>
+          <code class="ruby">          expect(controller.car.model).to eq(&quot;Ignis&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="111">
@@ -8219,7 +8199,7 @@
         <li class="covered" data-hits="1" data-linenumber="32">
           <span class="hits">1</span>
           
-          <code class="ruby">        controller.customers.should eq([customer])</code>
+          <code class="ruby">        expect(controller.customers).to eq([customer])</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="33">
@@ -8243,7 +8223,7 @@
         <li class="covered" data-hits="1" data-linenumber="36">
           <span class="hits">1</span>
           
-          <code class="ruby">        response.should render_template :index</code>
+          <code class="ruby">        expect(response).to render_template :index</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="37">
@@ -8291,7 +8271,7 @@
         <li class="covered" data-hits="1" data-linenumber="44">
           <span class="hits">1</span>
           
-          <code class="ruby">        controller.customer.should eq(customer)</code>
+          <code class="ruby">        expect(controller.customer).to eq(customer)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="45">
@@ -8321,7 +8301,7 @@
         <li class="covered" data-hits="1" data-linenumber="49">
           <span class="hits">1</span>
           
-          <code class="ruby">        response.should render_template :show</code>
+          <code class="ruby">        expect(response).to render_template :show</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="50">
@@ -8369,7 +8349,7 @@
         <li class="covered" data-hits="1" data-linenumber="57">
           <span class="hits">1</span>
           
-          <code class="ruby">        response.should render_template :new</code>
+          <code class="ruby">        expect(response).to render_template :new</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="58">
@@ -8507,7 +8487,7 @@
         <li class="covered" data-hits="1" data-linenumber="80">
           <span class="hits">1</span>
           
-          <code class="ruby">          should permit(:name, :surname,:address,:city,:zip_code).</code>
+          <code class="ruby">          is_expected.to permit(:name, :surname,:address,:city,:zip_code).</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="81">
@@ -8549,7 +8529,7 @@
         <li class="covered" data-hits="1" data-linenumber="87">
           <span class="hits">1</span>
           
-          <code class="ruby">          response.should redirect_to customers_url</code>
+          <code class="ruby">          expect(response).to redirect_to customers_url</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="88">
@@ -8627,7 +8607,7 @@
         <li class="covered" data-hits="1" data-linenumber="100">
           <span class="hits">1</span>
           
-          <code class="ruby">          response.should render_template :new</code>
+          <code class="ruby">          expect(response).to render_template :new</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="101">
@@ -8687,7 +8667,7 @@
         <li class="covered" data-hits="1" data-linenumber="110">
           <span class="hits">1</span>
           
-          <code class="ruby">        response.should render_template :edit</code>
+          <code class="ruby">        expect(response).to render_template :edit</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="111">
@@ -8759,13 +8739,13 @@
         <li class="covered" data-hits="1" data-linenumber="122">
           <span class="hits">1</span>
           
-          <code class="ruby">          controller.customer.name.should eq(&quot;John&quot;)</code>
+          <code class="ruby">          expect(controller.customer.name).to eq(&quot;John&quot;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="123">
           <span class="hits">1</span>
           
-          <code class="ruby">          controller.customer.surname.should eq(&quot;Due&quot;)</code>
+          <code class="ruby">          expect(controller.customer.surname).to eq(&quot;Due&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="124">
@@ -9113,7 +9093,7 @@
         <li class="covered" data-hits="1" data-linenumber="31">
           <span class="hits">1</span>
           
-          <code class="ruby">        controller.rental_orders.should eq([rental_order])</code>
+          <code class="ruby">        expect(controller.rental_orders).to eq([rental_order])</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="32">
@@ -9137,7 +9117,7 @@
         <li class="covered" data-hits="1" data-linenumber="35">
           <span class="hits">1</span>
           
-          <code class="ruby">        response.should render_template :index</code>
+          <code class="ruby">        expect(response).to render_template :index</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="36">
@@ -9185,7 +9165,7 @@
         <li class="covered" data-hits="1" data-linenumber="43">
           <span class="hits">1</span>
           
-          <code class="ruby">        controller.rental_order.should eq(rental_order)</code>
+          <code class="ruby">        expect(controller.rental_order).to eq(rental_order)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="44">
@@ -9215,7 +9195,7 @@
         <li class="covered" data-hits="1" data-linenumber="48">
           <span class="hits">1</span>
           
-          <code class="ruby">        response.should render_template :show</code>
+          <code class="ruby">        expect(response).to render_template :show</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="49">
@@ -9263,7 +9243,7 @@
         <li class="covered" data-hits="1" data-linenumber="56">
           <span class="hits">1</span>
           
-          <code class="ruby">        response.should render_template :new</code>
+          <code class="ruby">        expect(response).to render_template :new</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="57">
@@ -9365,7 +9345,7 @@
         <li class="covered" data-hits="1" data-linenumber="73">
           <span class="hits">1</span>
           
-          <code class="ruby">          should permit(:customer_id, :car_id,:start_date,:end_date).</code>
+          <code class="ruby">          is_expected.to permit(:customer_id, :car_id,:start_date,:end_date).</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="74">
@@ -9443,7 +9423,7 @@
         <li class="covered" data-hits="1" data-linenumber="86">
           <span class="hits">1</span>
           
-          <code class="ruby">              response.should redirect_to rental_orders_url</code>
+          <code class="ruby">              expect(response).to redirect_to rental_orders_url</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="87">
@@ -9617,7 +9597,7 @@
         <li class="covered" data-hits="1" data-linenumber="115">
           <span class="hits">1</span>
           
-          <code class="ruby">              response.should render_template :new</code>
+          <code class="ruby">              expect(response).to render_template :new</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="116">
@@ -9665,7 +9645,7 @@
         <li class="covered" data-hits="1" data-linenumber="123">
           <span class="hits">1</span>
           
-          <code class="ruby">        response.should render_template :edit</code>
+          <code class="ruby">        expect(response).to render_template :edit</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="124">
@@ -9725,13 +9705,13 @@
         <li class="covered" data-hits="1" data-linenumber="133">
           <span class="hits">1</span>
           
-          <code class="ruby">          controller.rental_order.start_date.should eq(&quot;2016-05-24 07:34:08&quot;)</code>
+          <code class="ruby">          expect(controller.rental_order.start_date).to eq(&quot;2016-05-24 07:34:08&quot;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="134">
           <span class="hits">1</span>
           
-          <code class="ruby">          controller.rental_order.end_date.should eq(&quot;2016-05-28 07:34:08&quot;)</code>
+          <code class="ruby">          expect(controller.rental_order.end_date).to eq(&quot;2016-05-28 07:34:08&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="135">
@@ -9929,7 +9909,7 @@
         <li class="covered" data-hits="1" data-linenumber="167">
           <span class="hits">1</span>
           
-          <code class="ruby">        response.should redirect_to rental_orders_url</code>
+          <code class="ruby">        expect(response).to redirect_to rental_orders_url</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="168">
@@ -11562,222 +11542,6 @@
   </pre>
 </div>
       
-        <div class="source_table" id="c7eb408337c4755ea5f6b3d53e452964081cd93c">
-  <div class="header">
-    <h3>spec/helpers/customers_helper_spec.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
-    <div>
-      <b>3</b> relevant lines. 
-      <span class="green"><b>3</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-  </div>
-  
-  <pre>
-    <ol>
-      
-        <li class="covered" data-hits="1" data-linenumber="1">
-          <span class="hits">1</span>
-          
-          <code class="ruby">require &#39;rails_helper&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="2">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="3">
-          
-          
-          <code class="ruby"># Specs in this file have access to a helper object that includes</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="4">
-          
-          
-          <code class="ruby"># the CustomersHelper. For example:</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="5">
-          
-          
-          <code class="ruby">#</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="6">
-          
-          
-          <code class="ruby"># describe CustomersHelper do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="7">
-          
-          
-          <code class="ruby">#   describe &quot;string concat&quot; do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="8">
-          
-          
-          <code class="ruby">#     it &quot;concats two strings with spaces&quot; do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="9">
-          
-          
-          <code class="ruby">#       expect(helper.concat_strings(&quot;this&quot;,&quot;that&quot;)).to eq(&quot;this that&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="10">
-          
-          
-          <code class="ruby">#     end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="11">
-          
-          
-          <code class="ruby">#   end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="12">
-          
-          
-          <code class="ruby"># end</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="13">
-          <span class="hits">1</span>
-          
-          <code class="ruby">RSpec.describe CustomersHelper, type: :helper do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="14">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  pending &quot;add some examples to (or delete) #{__FILE__}&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="15">
-          
-          
-          <code class="ruby">end</code>
-        </li>
-      
-    </ol>
-  </pre>
-</div>
-      
-        <div class="source_table" id="272528e77f1ebba828d440b7a2dd8fbdf9e6a645">
-  <div class="header">
-    <h3>spec/helpers/rental_orders_helper_spec.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
-    <div>
-      <b>3</b> relevant lines. 
-      <span class="green"><b>3</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-  </div>
-  
-  <pre>
-    <ol>
-      
-        <li class="covered" data-hits="1" data-linenumber="1">
-          <span class="hits">1</span>
-          
-          <code class="ruby">require &#39;rails_helper&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="2">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="3">
-          
-          
-          <code class="ruby"># Specs in this file have access to a helper object that includes</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="4">
-          
-          
-          <code class="ruby"># the RentalOrdersHelper. For example:</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="5">
-          
-          
-          <code class="ruby">#</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="6">
-          
-          
-          <code class="ruby"># describe RentalOrdersHelper do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="7">
-          
-          
-          <code class="ruby">#   describe &quot;string concat&quot; do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="8">
-          
-          
-          <code class="ruby">#     it &quot;concats two strings with spaces&quot; do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="9">
-          
-          
-          <code class="ruby">#       expect(helper.concat_strings(&quot;this&quot;,&quot;that&quot;)).to eq(&quot;this that&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="10">
-          
-          
-          <code class="ruby">#     end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="11">
-          
-          
-          <code class="ruby">#   end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="12">
-          
-          
-          <code class="ruby"># end</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="13">
-          <span class="hits">1</span>
-          
-          <code class="ruby">RSpec.describe RentalOrdersHelper, type: :helper do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="14">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  pending &quot;add some examples to (or delete) #{__FILE__}&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="15">
-          
-          
-          <code class="ruby">end</code>
-        </li>
-      
-    </ol>
-  </pre>
-</div>
-      
         <div class="source_table" id="f6768decacbcf1eafbc601aba00b21791084b30a">
   <div class="header">
     <h3>spec/models/car_spec.rb</h3>
@@ -11963,7 +11727,7 @@
         <li class="covered" data-hits="2" data-linenumber="29">
           <span class="hits">2</span>
           
-          <code class="ruby">  it { should have_many(:customers).through(:rental_orders) }</code>
+          <code class="ruby">  it { is_expected.to have_many(:customers).through(:rental_orders) }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="30">
@@ -12215,7 +11979,7 @@
         <li class="covered" data-hits="2" data-linenumber="37">
           <span class="hits">2</span>
           
-          <code class="ruby">  it { should have_many(:cars).through(:rental_orders) }</code>
+          <code class="ruby">  it { is_expected.to have_many(:cars).through(:rental_orders) }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="38">
@@ -12353,19 +12117,19 @@
         <li class="covered" data-hits="2" data-linenumber="19">
           <span class="hits">2</span>
           
-          <code class="ruby">    it { should belong_to(:user) }</code>
+          <code class="ruby">    it { is_expected.to belong_to(:user) }</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="20">
           <span class="hits">2</span>
           
-          <code class="ruby">    it { should belong_to(:customer) }</code>
+          <code class="ruby">    it { is_expected.to belong_to(:customer) }</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="21">
           <span class="hits">2</span>
           
-          <code class="ruby">    it { should belong_to(:car) }</code>
+          <code class="ruby">    it { is_expected.to belong_to(:car) }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="22">
@@ -12383,31 +12147,31 @@
         <li class="covered" data-hits="2" data-linenumber="24">
           <span class="hits">2</span>
           
-          <code class="ruby">    it { should validate_presence_of(:user_id) }</code>
+          <code class="ruby">    it { is_expected.to validate_presence_of(:user_id) }</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="25">
           <span class="hits">2</span>
           
-          <code class="ruby">    it { should validate_presence_of(:customer_id) }</code>
+          <code class="ruby">    it { is_expected.to validate_presence_of(:customer_id) }</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="26">
           <span class="hits">2</span>
           
-          <code class="ruby">    it { should validate_presence_of(:car_id) }</code>
+          <code class="ruby">    it { is_expected.to validate_presence_of(:car_id) }</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="27">
           <span class="hits">2</span>
           
-          <code class="ruby">    it { should_not allow_value(10.days.ago).for(:start_date) }</code>
+          <code class="ruby">    it { is_expected.not_to allow_value(10.days.ago).for(:start_date) }</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="28">
           <span class="hits">2</span>
           
-          <code class="ruby">    it { should_not allow_value(8.days.ago).for(:end_date) }</code>
+          <code class="ruby">    it { is_expected.not_to allow_value(8.days.ago).for(:end_date) }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="29">
@@ -12587,7 +12351,7 @@
         <li class="covered" data-hits="2" data-linenumber="25">
           <span class="hits">2</span>
           
-          <code class="ruby">    it { should have_many(:rental_orders) }</code>
+          <code class="ruby">    it { is_expected.to have_many(:rental_orders) }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="26">
@@ -12611,19 +12375,19 @@
         <li class="covered" data-hits="2" data-linenumber="29">
           <span class="hits">2</span>
           
-          <code class="ruby">    it { should validate_presence_of(:email)}</code>
+          <code class="ruby">    it { is_expected.to validate_presence_of(:email)}</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="30">
           <span class="hits">2</span>
           
-          <code class="ruby">    it { should validate_presence_of(:password)}</code>
+          <code class="ruby">    it { is_expected.to validate_presence_of(:password)}</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="31">
           <span class="hits">2</span>
           
-          <code class="ruby">    it { should validate_confirmation_of(:password)}</code>
+          <code class="ruby">    it { is_expected.to validate_confirmation_of(:password)}</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="32">

@@ -22,13 +22,13 @@ require 'rails_helper'
 RSpec.describe User, :type => :model do
 
   context "associations" do
-    it { should have_many(:rental_orders) }
+    it { is_expected.to have_many(:rental_orders) }
   end
 
   context "validations" do
-    it { should validate_presence_of(:email)}
-    it { should validate_presence_of(:password)}
-    it { should validate_confirmation_of(:password)}
+    it { is_expected.to validate_presence_of(:email)}
+    it { is_expected.to validate_presence_of(:password)}
+    it { is_expected.to validate_confirmation_of(:password)}
   end
 
   context "testing factory"do

@@ -28,11 +28,11 @@ RSpec.describe RentalOrdersController, type: :controller do
       it "populates an array of rental_orders" do
         rental_order = create(:rental_order, user: @user)
         get :index
-        controller.rental_orders.should eq([rental_order])
+        expect(controller.rental_orders).to eq([rental_order])
       end
       it "renders the :index view" do
         get :index
-        response.should render_template :index
+        expect(response).to render_template :index
       end
     end
 
@@ -40,12 +40,12 @@ RSpec.describe RentalOrdersController, type: :controller do
       it "assigns the requested rental_order to rental_order" do
         rental_order = create(:rental_order, user: @user)
         get :show, id: rental_order
-        controller.rental_order.should eq(rental_order)
+        expect(controller.rental_order).to eq(rental_order)
       end
 
       it "renders the :show template" do
         get :show, id: create(:rental_order, user: @user)
-        response.should render_template :show
+        expect(response).to render_template :show
       end
 
     end
@@ -53,7 +53,7 @@ RSpec.describe RentalOrdersController, type: :controller do
     describe "GET #new" do
       it "renders the :new template" do
         get :new
-        response.should render_template :new
+        expect(response).to render_template :new
       end
 
     end
@@ -70,7 +70,7 @@ RSpec.describe RentalOrdersController, type: :controller do
               end_date: "2016-03-29 07:34:08",
             }
           }
-          should permit(:customer_id, :car_id,:start_date,:end_date).
+          is_expected.to permit(:customer_id, :car_id,:start_date,:end_date).
           for(:create, params: params).
             on(:rental_order)
           end
@@ -83,7 +83,7 @@ RSpec.describe RentalOrdersController, type: :controller do
 
             it "redirects to index page" do
               post :create, rental_order: attributes_with_foreign_keys(:rental_order)
-              response.should redirect_to rental_orders_url
+              expect(response).to redirect_to rental_orders_url
             end
 
             it "will create new rental order with non booked date for the same car" do
@@ -112,7 +112,7 @@ RSpec.describe RentalOrdersController, type: :controller do
             end
             it "re-renders the :new template" do
               post :create, rental_order: attributes_with_foreign_keys(:invalid_rental_order)
-              response.should render_template :new
+              expect(response).to render_template :new
             end
           end
         end
@@ -120,7 +120,7 @@ RSpec.describe RentalOrdersController, type: :controller do
       it "renders the :edit template" do
         rental_order = create(:rental_order, user:@user)
         get :edit, id: rental_order
-        response.should render_template :edit
+        expect(response).to render_template :edit
       end
     end
     describe 'PUT update' do
@@ -130,8 +130,8 @@ RSpec.describe RentalOrdersController, type: :controller do
       context "with valid attributes" do
         it "update rental_order in the database" do
           put :update, id: @rental_order1, rental_order: attributes_with_foreign_keys(:rental_order)
-          controller.rental_order.start_date.should eq("2016-05-24 07:34:08")
-          controller.rental_order.end_date.should eq("2016-05-28 07:34:08")
+          expect(controller.rental_order.start_date).to eq("2016-05-24 07:34:08")
+          expect(controller.rental_order.end_date).to eq("2016-05-28 07:34:08")
         end
         it "redirects to the home page" do
           put :update, id: @rental_order1, rental_order: attributes_with_foreign_keys(:rental_order)
@@ -164,7 +164,7 @@ RSpec.describe RentalOrdersController, type: :controller do
 
       it "redirects to rental_orders#index" do
         delete :destroy, id: @rental_order
-        response.should redirect_to rental_orders_url
+        expect(response).to redirect_to rental_orders_url
       end
     end
 
