@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-02-18T14:23:01+01:00">2016-02-18T14:23:01+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-02-19T17:44:14+01:00">2016-02-19T17:44:14+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">99.53%</span></span>
+    (<span class="covered_percent"><span class="green">99.09%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.26
+         2.28
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>49</b> files in total.
-    <b>643</b> relevant lines. 
-    <span class="green"><b>640</b> lines covered</span> and
-    <span class="red"><b>3</b> lines missed </span>
+    <b>51</b> files in total.
+    <b>656</b> relevant lines. 
+    <span class="green"><b>650</b> lines covered</span> and
+    <span class="red"><b>6</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -63,11 +63,11 @@
       <tr>
         <td class="strong"><a href="#6ba71379b37908790b9874725b36b5ac6b58b4d3" class="src_link" title="app/controllers/cars_controller.rb">app/controllers/cars_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>42</td>
-        <td>15</td>
-        <td>15</td>
+        <td>45</td>
+        <td>17</td>
+        <td>17</td>
         <td>0</td>
-        <td>3.9</td>
+        <td>3.6</td>
       </tr>
       
       <tr>
@@ -108,6 +108,16 @@
         <td>4</td>
         <td>0</td>
         <td>1.5</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#81ab4bc2167e51ae30cc5fa42cd42fc6aafc2431" class="src_link" title="app/decorators/rental_order_decorator.rb">app/decorators/rental_order_decorator.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>16</td>
+        <td>5</td>
+        <td>5</td>
+        <td>0</td>
+        <td>1.4</td>
       </tr>
       
       <tr>
@@ -172,12 +182,12 @@
       
       <tr>
         <td class="strong"><a href="#f10432fddf18dabd0998d920da021d0037395c70" class="src_link" title="app/models/rental_order.rb">app/models/rental_order.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>55</td>
+        <td class="green strong">96.0 %</td>
+        <td>58</td>
+        <td>25</td>
         <td>24</td>
-        <td>24</td>
-        <td>0</td>
-        <td>6.0</td>
+        <td>1</td>
+        <td>6.8</td>
       </tr>
       
       <tr>
@@ -388,6 +398,16 @@
         <td>6</td>
         <td>0</td>
         <td>1.5</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#854fb1e836e01cd957b3f533ba4ea86188bf28ab" class="src_link" title="spec/decorators/rental_order_decorator_spec.rb">spec/decorators/rental_order_decorator_spec.rb</a></td>
+        <td class="red strong">60.0 %</td>
+        <td>8</td>
+        <td>5</td>
+        <td>3</td>
+        <td>2</td>
+        <td>0.6</td>
       </tr>
       
       <tr>
@@ -657,8 +677,8 @@
     <h3>app/controllers/cars_controller.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>15</b> relevant lines. 
-      <span class="green"><b>15</b> lines covered</span> and
+      <b>17</b> relevant lines. 
+      <span class="green"><b>17</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -750,10 +770,10 @@
           <code class="ruby">class CarsController &lt; ApplicationController</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="15">
+        <li class="covered" data-hits="1" data-linenumber="15">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">  before_action :pass_disabled_dates, only: :show</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="16">
@@ -762,10 +782,10 @@
           <code class="ruby">  def show</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="17">
-          <span class="hits">2</span>
+        <li class="never" data-hits="" data-linenumber="17">
           
-          <code class="ruby">    gon.dates = car.booked_dates</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="18">
@@ -912,7 +932,25 @@
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="42">
+        <li class="covered" data-hits="1" data-linenumber="42">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def pass_disabled_dates</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="43">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    gon.dates = car.booked_dates</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="44">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="45">
           
           
           <code class="ruby">end</code>
@@ -1720,6 +1758,120 @@
   </pre>
 </div>
       
+        <div class="source_table" id="81ab4bc2167e51ae30cc5fa42cd42fc6aafc2431">
+  <div class="header">
+    <h3>app/decorators/rental_order_decorator.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>5</b> relevant lines. 
+      <span class="green"><b>5</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class RentalOrderDecorator &lt; Draper::Decorator</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  delegate_all</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="3">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby">  # Define presentation-specific methods here. Helpers are accessed through</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby">  # `helpers` (aka `h`). You can override attributes, for example:</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby">  #</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby">  #   def created_at</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby">  #     helpers.content_tag :span, class: &#39;time&#39; do</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby">  #       object.created_at.strftime(&quot;%a %m/%d/%y&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby">  #     end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby">  #   end</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def rental_cost</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="13">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    comfort_class_cost = {&#39;A&#39;=&gt; 100, &#39;B&#39;=&gt; 75, &#39;C&#39;=&gt;50}</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="14">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    comfort_class_cost[self.car.comfort_class] * (((self.end_date - self.start_date)/86400).to_i + 1)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
         <div class="source_table" id="fc05369b44523f3321f5a794e7136d8176ebd980">
   <div class="header">
     <h3>app/helpers/application_helper.rb</h3>
@@ -2443,11 +2595,11 @@
         <div class="source_table" id="f10432fddf18dabd0998d920da021d0037395c70">
   <div class="header">
     <h3>app/models/rental_order.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h4><span class="green">96.0 %</span> covered</h4>
     <div>
-      <b>24</b> relevant lines. 
+      <b>25</b> relevant lines. 
       <span class="green"><b>24</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <span class="red"><b>1</b> lines missed.</span>
     </div>
   </div>
   
@@ -2592,154 +2744,154 @@
           <code class="ruby">  validate :date_cannot_be_already_booked</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="24">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="25">
+        <li class="covered" data-hits="1" data-linenumber="24">
           <span class="hits">1</span>
           
-          <code class="ruby">  def rental_cost</code>
+          <code class="ruby">  validate :end_date_must_be_after_start_date</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="26">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    comfort_class_cost = {&#39;A&#39;=&gt; 100, &#39;B&#39;=&gt; 75, &#39;C&#39;=&gt;50}</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="27">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    comfort_class_cost[self.car.comfort_class] * (((self.end_date - self.start_date)/86400).to_i + 1)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="28">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="29">
+        <li class="never" data-hits="" data-linenumber="25">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="30">
+        <li class="never" data-hits="" data-linenumber="26">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="27">
           <span class="hits">1</span>
           
           <code class="ruby">  def start_date_cannot_be_in_the_past</code>
         </li>
       
-        <li class="covered" data-hits="27" data-linenumber="31">
+        <li class="covered" data-hits="27" data-linenumber="28">
           <span class="hits">27</span>
           
           <code class="ruby">    if start_date.present? &amp;&amp; start_date &lt; Date.today</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="32">
+        <li class="covered" data-hits="1" data-linenumber="29">
           <span class="hits">1</span>
           
           <code class="ruby">      errors.add(:start_date, &quot;can&#39;t be in the past&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="33">
+        <li class="never" data-hits="" data-linenumber="30">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="34">
+        <li class="never" data-hits="" data-linenumber="31">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="35">
+        <li class="never" data-hits="" data-linenumber="32">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="36">
+        <li class="covered" data-hits="1" data-linenumber="33">
           <span class="hits">1</span>
           
           <code class="ruby">  def end_date_cannot_be_in_the_past</code>
         </li>
       
-        <li class="covered" data-hits="31" data-linenumber="37">
+        <li class="covered" data-hits="31" data-linenumber="34">
           <span class="hits">31</span>
           
           <code class="ruby">    if end_date.present? &amp;&amp; end_date &lt; Date.today</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="38">
+        <li class="covered" data-hits="1" data-linenumber="35">
           <span class="hits">1</span>
           
           <code class="ruby">      errors.add(:end_date, &quot;can&#39;t be in the past&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="39">
+        <li class="never" data-hits="" data-linenumber="36">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="40">
+        <li class="never" data-hits="" data-linenumber="37">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="41">
+        <li class="never" data-hits="" data-linenumber="38">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="42">
+        <li class="covered" data-hits="1" data-linenumber="39">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def end_date_must_be_after_start_date</code>
+        </li>
+      
+        <li class="covered" data-hits="31" data-linenumber="40">
+          <span class="hits">31</span>
+          
+          <code class="ruby">    if end_date.present? &amp;&amp; start_date.present? &amp;&amp; end_date &lt; start_date</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="41">
+          
+          
+          <code class="ruby">      errors.add(:end_date, &quot;can&#39;t be before start date&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="42">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="43">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="44">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="45">
           <span class="hits">1</span>
           
           <code class="ruby">  def date_cannot_be_already_booked</code>
         </li>
       
-        <li class="covered" data-hits="31" data-linenumber="43">
+        <li class="covered" data-hits="31" data-linenumber="46">
           <span class="hits">31</span>
           
           <code class="ruby">    if car_id.present?</code>
         </li>
       
-        <li class="covered" data-hits="26" data-linenumber="44">
+        <li class="covered" data-hits="26" data-linenumber="47">
           <span class="hits">26</span>
           
           <code class="ruby">      Car.find_by_id(car_id).rental_orders.each do |rental_order|</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="45">
-          <span class="hits">3</span>
-          
-          <code class="ruby">        if start_date.present? &amp;&amp; start_date.between?(rental_order.start_date,rental_order.end_date)</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="46">
-          <span class="hits">2</span>
-          
-          <code class="ruby">          errors.add(:start_date, &quot;already booked&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="47">
-          
-          
-          <code class="ruby">        end</code>
-        </li>
-      
         <li class="covered" data-hits="3" data-linenumber="48">
           <span class="hits">3</span>
           
-          <code class="ruby">        if end_date.present? &amp;&amp; end_date.between?(rental_order.start_date,rental_order.end_date)</code>
+          <code class="ruby">        if start_date.present? &amp;&amp; start_date.between?(rental_order.start_date,rental_order.end_date)</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="49">
@@ -2754,31 +2906,49 @@
           <code class="ruby">        end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="51">
+        <li class="covered" data-hits="3" data-linenumber="51">
+          <span class="hits">3</span>
           
-          
-          <code class="ruby">       end</code>
+          <code class="ruby">        if end_date.present? &amp;&amp; end_date.between?(rental_order.start_date,rental_order.end_date)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="52">
+        <li class="covered" data-hits="2" data-linenumber="52">
+          <span class="hits">2</span>
           
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">          errors.add(:start_date, &quot;already booked&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="53">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">        end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="54">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">       end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="55">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="56">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="57">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="58">
           
           
           <code class="ruby">end</code>
@@ -9931,6 +10101,72 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="854fb1e836e01cd957b3f533ba4ea86188bf28ab">
+  <div class="header">
+    <h3>spec/decorators/rental_order_decorator_spec.rb</h3>
+    <h4><span class="red">60.0 %</span> covered</h4>
+    <div>
+      <b>5</b> relevant lines. 
+      <span class="green"><b>3</b> lines covered</span> and
+      <span class="red"><b>2</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;spec_helper&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">describe RentalOrderDecorator do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def rental_cost</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="5">
+          
+          
+          <code class="ruby">    comfort_class_cost = {&#39;A&#39;=&gt; 100, &#39;B&#39;=&gt; 75, &#39;C&#39;=&gt;50}</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="6">
+          
+          
+          <code class="ruby">    comfort_class_cost[self.car.comfort_class] * (((self.end_date - self.start_date)/86400).to_i + 1)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
           
           
           <code class="ruby">end</code>
